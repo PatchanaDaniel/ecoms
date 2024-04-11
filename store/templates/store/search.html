@@ -1,0 +1,39 @@
+{%extends 'base.html'%}
+{%block content%}
+{% load static %}
+   
+    
+    
+    <br>
+    <form class="search" action="{% url 'search' %}" method="get">
+        <input type="text" name="query" placeholder="Recherche..." width="95px">
+        <button type="submit">Rechercher </button>
+     </form>
+     <br><br>
+     <br>
+
+     
+        <h2>Resultats de la recherche</h2>
+    <br><br><br>
+ 
+    <div class="section"> 
+        {%for p in product %}
+        <div class="detail"> 
+    
+            <div class="card" style="width: 18rem;">
+                <img src="{{p.thumbnail.url}}" class="card-img-top" alt="{{product.name}}">
+                <div class="card-body">
+                  <h5 class="card-title">{{p.price}} Francs CFA</h5>
+                  <p class="card-text">{{p.name}}</p>
+                  <a href="{% url 'product' p.slug %}" class="btn btn-primary">  Voir le produit </a>
+                </div>
+              </div>
+    
+    
+    </div>
+    {%endfor%}
+    </div>
+    
+    
+    
+    {%endblock%}
