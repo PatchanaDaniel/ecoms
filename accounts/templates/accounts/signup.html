@@ -6,15 +6,16 @@
     {%csrf_token%}
     
     <div class="mem">
-        <label for="l" class="">Nom d'utilisateur {{msg}} </label>
+     <span class="text-danger">{{msg}} </span> 
+        <label for="l" class="">Nom d'utilisateur  </label>
         <div class="">
-          <input type="text"  class="kl" id="" name="username" placeholder="jean">
+          <input type="text"  class="kl" id="" name="username" placeholder=" Nom d'utilisateur">
         </div>
       </div>
       <div class="mem">
         <label for="" class="">Mot de passe</label>
         <div class="">
-          <input type="password" class="kl" id="" name="password">
+          <input type="password" class="kl" id="" name="password" placeholder="Mot de Passe">
         </div>
       </div>
 <input type="submit"  id= "lm" value="S'inscrire">

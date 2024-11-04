@@ -5,9 +5,14 @@
     
     
     <br>
-    <form class="search" action="{% url 'search' %}" method="get">
-        <input type="text" name="query" placeholder="Recherche..." width="95px">
-        <button type="submit">Rechercher </button>
+    <form class="search row " action="{% url 'search' %}" method="get">
+      <div class="col-4 offset-4  ">
+        <input type="text" name="query" placeholder=" Rechercher ..." class="w-100 rounded-pill">
+      </div>
+      <div class="col-1 pl-2 row-sm ">
+        <button type="submit" class="rounded-pill">Rechercher</button>
+      </div>
+      
      </form>
      <br><br>
      <br>

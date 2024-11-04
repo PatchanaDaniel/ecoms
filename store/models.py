@@ -5,14 +5,20 @@ from django.urls import reverse
 from shop.settings import AUTH_USER_MODEL
 
 # Create your models here.
+class Category(m.Model):
+    name=m.CharField(max_length=24)
+    description=m.TextField(blank=True)
+    def __str__(self) -> str:
+        return self.name
   
 class Product(m.Model):
     name=m.CharField(max_length=128)
     slug=m.SlugField(max_length=128)
-    price=m.FloatField(default=0.0)
+    price=m.IntegerField(default=0)
     stock=m.IntegerField(default=0)
     description=m.TextField(blank=True) 
     thumbnail=m.ImageField(upload_to='products',blank=True,null=True)
+    category=m.ForeignKey(Category,on_delete=m.CASCADE)
     
     def __str__(self) -> str:
         return self.name

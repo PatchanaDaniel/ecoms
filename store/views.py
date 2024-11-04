@@ -1,12 +1,25 @@
 from django.shortcuts import get_object_or_404, redirect, render
 from django.urls import reverse
-from store.models import Cart, Order, Product
+from store.models import Cart, Order, Product , Category
 
 # Create your views here.
 
 def index(request):
     products=Product.objects.all()
-    return render(request,'store/index.html',{"products":products})
+    
+    categories=Category.objects.all()
+
+    return render(request,'store/index.html',{"products":products,"categories":categories})
+
+def cat(request,id):
+    if id==0:
+        products=Product.objects.all()
+    else:
+        products=Product.objects.filter(category=id)
+    
+    categories=Category.objects.all()
+
+    return render(request,'store/index.html',{"products":products,"categories":categories})
 
 def product_detail(request,slug):
     product=get_object_or_404(Product,slug=slug)
@@ -40,11 +53,14 @@ def delete_order(request,id):
 def cart(request):
     cart=get_object_or_404(Cart,user=request.user)
     
+    
     return render(request,'store/cart.html',context={"orders":cart.orders.all()})
 
 def delete_cart(request):
     if cart := request.user.cart:
-        cart.delete()
+        orders=cart.orders.all()
+        orders.delete() 
+
         
     return redirect("index")
 

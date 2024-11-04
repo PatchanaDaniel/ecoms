@@ -35,6 +35,8 @@ flex-wrap: wrap;
 .detail{
  
     display: flex;
+
+    font-size: 16;
     
 flex-direction: column;
 gap: 30px;
@@ -60,7 +62,7 @@ h1{
 
 nav {
   
-    background-color: blue;
+    background-color: #B2B2FF;
 
    color: white;
     
@@ -72,9 +74,11 @@ nav {
     color: white;
     text-decoration: none;
     padding: 10px;
+    font-size: 22px;
   }
   nav a:hover{
    background-color:#247FE7;
+   opacity: 0.75;
    color:white;
     border-color:white;
     border-radius: 12px;
@@ -86,13 +90,13 @@ nav {
 
 .button {
   margin-right: 10px;
- text-decoration: none;
-  color: white;
+color: white;
   font-weight: bold;
 }
 .button:hover{
 
   color: white;
+  font-weight: bold;
 }
 
 
@@ -119,6 +123,8 @@ align-items: center;
 
 gap:25px;
 justify-content: space-between;
+margin-top:5em;
+margin-bottom:5em;
 
 
  }
@@ -128,10 +134,14 @@ justify-content: space-between;
 gap: 5px;
 text-align: left;
 
+
  }
  #lm{
-background-color:blue;
-color:white
+  
+background-color: #247FE7;
+color:white;
+font-weight: bold;
+
 
  }
  #lm:hover{
@@ -148,17 +158,16 @@ color:white
 
 }
 .see{
-  border-style: solid;
+ 
   border-radius: 10px;
   display: block;
   text-align: center;
   text-decoration: none;
   margin-right: auto;
   margin-left: auto;
-  padding-top:4px;
-  padding-bottom:auto ;
+  
   height: 35px;
- 
+  font-weight: bold;
   background-color: blue;
   color:white;
   
@@ -180,34 +189,28 @@ padding-right: 25%;
   }
 .search{
   
-    
+    gap: 0;
   
-    gap: 20px;
+
 
  
-display: flex;
-flex-direction: row;
-justify-content: center;
+
   }
   .search input {
-    width: 300px;
+    width: 300 em;
     border-style: solid;
-    border-radius: 12px;
-    -webkit-border-radius: 12px;
-    -moz-border-radius: 12px;
-    -ms-border-radius: 12px;
-    -o-border-radius: 12px;
+    
+ 
 }
  button[type="submit"]{
     border-style: solid;
-    border-radius: 12px;
-    -webkit-border-radius: 12px;
-    -moz-border-radius: 12px;
-    -ms-border-radius: 12px;
-    -o-border-radius: 12px;
+    box-shadow: gray 4px 4px;
+    
+   
 }
   button[type="submit"]:hover{
     background-color: #247FE7;
+    color: white;
   }
   .nivd{
      display: block;
@@ -239,35 +242,28 @@ justify-content: center;
     display: flex;
     flex-direction: column;
     position:relative;
-    bottom: -120px;
-    color: black;
-    background-color: #CCD5DE;
-    text-align: center;
-    margin-top:45px;
-    padding: 15px;
-    height:125px;
-    width:inherit;
+   
     
    
   }
   .f1{
     
      
-  text-align: center;
-  color: black;
-    background-color: #CCD5DE;
+  text-align:center;
+  color:white;
     display: flex;
-    
+    padding-left: 5em;
   
-    justify-content: center;
+    justify-content:left;
   }
   .f2{
-     padding-left: 25px;
+     padding-left: 2em;
     
-    align-items: center;
-    
-    
-    
+    align-items:flex-start;
+ }
+ @media (max-width: 768px) {
+ .cache {
+display:none;
 
-  }
- 
+ }
+}

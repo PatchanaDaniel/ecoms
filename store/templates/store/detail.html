@@ -5,9 +5,9 @@
 <div class="allcenter">
     <div class="section"> 
     
-        <div class="card" style="width: 18rem;">
+        <div class="card shadow" style="width: 18rem;">
             
-            <img src="{{product.thumbnail.url}}" class="card-img-top" alt="{{product.name}}">
+            <img src="{{product.thumbnail.url}}" class="card-img-top " alt="{{product.name}}">
             <div class="card-body">
                
                 
@@ -26,7 +26,7 @@
 <p class="card-text"> {{product.description}} Francs CFA</p>
 <p class="card-text">Quantité disponible :{{product.stock}} en stocke</p>
 {% if b %}
-<h4><a class="article" href="{% url a product.slug%}"><button type="button" class="btn btn-success" class="bi bi-cart-plus"> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart-plus" viewBox="0 0 16 16">
+<h4><a class="article" href="{% url a product.slug%}"><button type="button" class="btn btn-success shadow" class="bi bi-cart-plus"> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart-plus" viewBox="0 0 16 16">
 {%else%}
 <h4><a class="article" href="{% url a %}"><button type="button" class="btn btn-success" class="bi bi-cart-plus"> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart-plus" viewBox="0 0 16 16"></svg>
   {%endif%}

@@ -3,28 +3,53 @@
 {%block content%}
 {% load static %}
 <br>
-<form class="search" action="{% url 'search' %}" method="get">
-    <input type="text" name="query" placeholder="Recherche..." width="155px">
-    <button type="submit">Rechercher</button>
-    
- </form>
+
+<form class="search row " action="{% url 'search' %}" method="get">
+  <div class="col-4 offset-4  ">
+    <input type="text" name="query" style="padding-left: 10px;"    placeholder=" Rechercher ..." class="w-100  rounded-pill">
+  </div>
+  
+
  <br><br>
  <br>
  
 
  
-<h1 id="prod">Produits </h1>
-<br><br><br>
-<div class="section"> 
+
+<div class="row m-5 mb-40">
+  <div class="col-md-4 col-sm-12">
+    <div class="list-group shadow h-100">
+      <a href="#" class="list-group-item list-group-item-action disabled " aria-disabled="true">Catégories</a>
+      <a href="{% url 'cat' 0%}" id="tout" class="list-group-item list-group-item- fw-bold">Tout</a>
+       
+      {% for i in categories %}
+      <a href="{% url 'cat' i.id%}" id="{{i.id}}" class="list-group-item list-group-item-action fw-bold">{{i.name}}</a>
+   
+      {% endfor %}
+    
+   
+
+
+   
+    </div>
+  </div>
+  <div class="col-md-8  cache">
+   <marquee behavior="" direction="left"><h1 class="text-primary my-5">ElectroChoco     <span class="px-4"></span>  Bienvenue  <span class="px-4"></span>   Faites vos achats ici !  <span class="px-5 mx-4" ></span> ElectroChoco     <span class="px-4"></span> Bienvenue  <span class="px-4"></span> Faites vos achats ici ! </h1></marquee>
+    
+
+</div> 
+</div>
+
+<div class="section mt-20"> 
     {%for p in products%}
     <div class="detail"> 
 
-        <div class="card" style="width: 18rem;">
+        <div class="card fs-4 shadow" style="width: 18rem;">
             <img src="{{p.thumbnail.url}}" class="card-img-top" alt="{{product.name}}">
             <div class="card-body">
-              <h5 class="card-title">{{p.price}} Francs CFA</h5>
-              <p class="card-text">{{p.name}}</p>
-              <a href="{% url 'product' p.slug %}"  class="see"> Voir le produit</a>
+              <h5 class="card-title"> {{p.name}} </h5>
+              <p class="card-text">{{p.price}} Francs CFA</p>
+              <a href="{% url 'product' p.slug %}"  class="see text-center "> Voir le produit</a>
             </div>
           </div>
 
@@ -32,5 +57,7 @@
 </div>
 {%endfor%}
 </div>
+
+
 
 {%endblock%}
